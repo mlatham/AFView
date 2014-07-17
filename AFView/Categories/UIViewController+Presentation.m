@@ -1,12 +1,7 @@
 #import "UIViewController+Presentation.h"
 
 
-#pragma mark Constants
-
-//#define DEBUG_VIEW_CONTROLLER_PRESENTATION
-
-
-#pragma mark - Class Definition
+#pragma mark Class Definition
 
 @implementation UIViewController (Presentation)
 
@@ -48,10 +43,6 @@
 
 - (void)pushViewController: (UIViewController *)viewController
 {
-#ifdef DEBUG_VIEW_CONTROLLER_PRESENTATION
-	AFLog(AFLogLevelDebug, @"pushViewController: %@", [viewController class]);
-#endif
-
 	if ([self isKindOfClass: [UINavigationController class]])
 	{
 		UINavigationController *navigationController = (UINavigationController *)self;
@@ -86,10 +77,6 @@
 	animated: (BOOL)animated
 	completion: (void (^)(void))completion
 {
-#ifdef DEBUG_VIEW_CONTROLLER_PRESENTATION
-	AFLog(AFLogLevelDebug, @"presentViewController: %@", [viewController class]);
-#endif
-
 	if (navigationControllerClass != nil)
 	{
 		// This code is convenient, but be careful when providing a Class to this method.

@@ -81,7 +81,6 @@
 		C92F20B9196EE5130027034B /* UITableViewCell+Universal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Universal.m"; sourceTree = "<group>"; };
 		C92F20BA196EE5130027034B /* UIView+Universal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Universal.h"; sourceTree = "<group>"; };
 		C92F20BB196EE5130027034B /* UIView+Universal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Universal.m"; sourceTree = "<group>"; };
-		C92F20C3196EE5130027034B /* AFLogHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFLogHelper.h; sourceTree = "<group>"; };
 		C92F20C7196EE5130027034B /* AFAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAppDelegate.h; sourceTree = "<group>"; };
 		C92F20C8196EE5130027034B /* AFAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAppDelegate.m; sourceTree = "<group>"; };
 		C92F20C9196EE5130027034B /* AFDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDemoController.h; sourceTree = "<group>"; };
@@ -102,7 +101,6 @@
 		C92F20FF196EE65C0027034B /* AFPlatformHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPlatformHelper.h; sourceTree = "<group>"; };
 		C92F2100196EE65C0027034B /* AFPlatformHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPlatformHelper.m; sourceTree = "<group>"; };
 		C9A7C16A19785C1200C367AC /* AFView-Includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFView-Includes.h"; sourceTree = "<group>"; };
-		C9A7C16C19785DEB00C367AC /* AFDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDefines.h; sourceTree = "<group>"; };
 		C9E3D2D2197464AB00EF52FD /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
 		C9E3D2D3197464AB00EF52FD /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
 		C9E3D2D4197464AB00EF52FD /* UIView+FirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FirstResponder.h"; sourceTree = "<group>"; };
@@ -264,12 +262,10 @@
 		C92F20BC196EE5130027034B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				C9A7C16C19785DEB00C367AC /* AFDefines.h */,
 				C9E3D30019746C0900EF52FD /* AFKeyboardObserver.h */,
 				C9E3D30119746C0900EF52FD /* AFKeyboardObserver.m */,
 				C9E3D30319746C5A00EF52FD /* AFKeyboardInfo.h */,
 				C9E3D30419746C5A00EF52FD /* AFKeyboardInfo.m */,
-				C92F20C3196EE5130027034B /* AFLogHelper.h */,
 				C92F20FF196EE65C0027034B /* AFPlatformHelper.h */,
 				C92F2100196EE65C0027034B /* AFPlatformHelper.m */,
 				C9E3D31219747ACD00EF52FD /* AFParallaxHelper.h */,
