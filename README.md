@@ -24,5 +24,5 @@ Matt Latham, matt.e.latham@gmail.com
 
 ## License
 
-AFView is available under the MIT license. See the LICENSE file for more info.
+AFView is available under the WTFPL license. See the LICENSE file for more info.
 
