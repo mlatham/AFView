@@ -101,6 +101,8 @@
 		C92F20FB196EE5E40027034B /* Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		C92F20FF196EE65C0027034B /* AFPlatformHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPlatformHelper.h; sourceTree = "<group>"; };
 		C92F2100196EE65C0027034B /* AFPlatformHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPlatformHelper.m; sourceTree = "<group>"; };
+		C9A7C16A19785C1200C367AC /* AFView-Includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFView-Includes.h"; sourceTree = "<group>"; };
+		C9A7C16C19785DEB00C367AC /* AFDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDefines.h; sourceTree = "<group>"; };
 		C9E3D2D2197464AB00EF52FD /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
 		C9E3D2D3197464AB00EF52FD /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
 		C9E3D2D4197464AB00EF52FD /* UIView+FirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FirstResponder.h"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		6003F593195388D20070C39A /* AFView */ = {
 			isa = PBXGroup;
 			children = (
+				C9A7C16A19785C1200C367AC /* AFView-Includes.h */,
 				C92F20B1196EE5130027034B /* Categories */,
 				C92F20BC196EE5130027034B /* Common */,
 				C92F20C6196EE5130027034B /* Demo */,
@@ -261,6 +264,7 @@
 		C92F20BC196EE5130027034B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C9A7C16C19785DEB00C367AC /* AFDefines.h */,
 				C9E3D30019746C0900EF52FD /* AFKeyboardObserver.h */,
 				C9E3D30119746C0900EF52FD /* AFKeyboardObserver.m */,
 				C9E3D30319746C5A00EF52FD /* AFKeyboardInfo.h */,
