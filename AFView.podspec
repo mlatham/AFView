@@ -13,6 +13,8 @@ Pod::Spec.new do |s|
   s.source				= { :git => "https://github.com/mlatham/AFView.git", :tag => "v0.1.0" }
   s.source_files		= 'AFView/Pod/**/*.{h,m}'
   s.public_header_files = 'AFView/Pod/**/*.h'
+  
+  s.prefix_header_contents = '#import "AFView-Includes.h"'
 
   s.platform			= :ios, "6.0"
   s.requires_arc		= true
