@@ -59,10 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2043A39B88AB4CBA921098FC /* AFView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AFView.podspec; path = ../AFView.podspec; sourceTree = "<group>"; };
 		273877E296C84F16A06C7F43 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A81170D151488F9DA2A668 /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
-		4E8CAE6EE4904C5E8DB20F36 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* AFView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -70,7 +68,9 @@
 		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		92711654763449DF9CC32B2E /* Pods-AFView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFView.xcconfig"; path = "Pods/Pods-AFView.xcconfig"; sourceTree = "<group>"; };
-		A00A3D17EBEB42A492C26513 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C90D25BE19784AF600B9083B /* AFView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AFView.podspec; sourceTree = "<group>"; };
+		C90D25BF19784AF600B9083B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C90D25C019784AF600B9083B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		C92F20B2196EE5130027034B /* NSBundle+Universal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Universal.h"; sourceTree = "<group>"; };
 		C92F20B3196EE5130027034B /* NSBundle+Universal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Universal.m"; sourceTree = "<group>"; };
 		C92F20B4196EE5130027034B /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
@@ -220,9 +220,9 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				2043A39B88AB4CBA921098FC /* AFView.podspec */,
-				4E8CAE6EE4904C5E8DB20F36 /* README.md */,
-				A00A3D17EBEB42A492C26513 /* LICENSE */,
+				C90D25BE19784AF600B9083B /* AFView.podspec */,
+				C90D25BF19784AF600B9083B /* LICENSE */,
+				C90D25C019784AF600B9083B /* README.md */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
