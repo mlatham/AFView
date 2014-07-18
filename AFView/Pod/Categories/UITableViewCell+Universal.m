@@ -99,7 +99,8 @@ static char TEMPLATE_KEY;
 		// Size to the cell's subviews.
 		for (UIView *subview in self.contentView.subviews)
 		{
-			if (subview.frame.origin.y + subview.frame.size.height > height)
+			if (subview.hidden == NO
+				&& subview.frame.origin.y + subview.frame.size.height > height)
 			{
 				height = subview.frame.origin.y + subview.frame.size.height;
 			}
