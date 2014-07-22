@@ -34,6 +34,61 @@ static char CACHED_BOTTOM_CONTENT_INSET_KEY;
 
 - (void)scrollToView: (UIView *)view
 	duration: (NSTimeInterval)duration
+	animationCurve: (UIViewAnimationCurve)animationCurve
+	bottomInset: (CGFloat)bottomInset
+{
+	// Set the cached bottom content inset, to allow resetting it later.
+	if ([self cachedBottomContentInset] == nil)
+	{
+		[self setCachedBottomContentInset: [NSNumber numberWithFloat: self.contentInset.bottom]];
+	}
+
+	UIEdgeInsets contentInset = self.contentInset;
+	contentInset.bottom = bottomInset;
+
+	CGPoint contentSpacePoint = [view.superview convertPoint: view.frame.origin
+		toView: self];
+		
+	// Send the point on its mystical journey.
+	contentSpacePoint.y -= MARGIN;
+	
+	CGPoint screenSpacePoint = CGPointMake(0.f, contentSpacePoint.y - self.contentOffset.y);
+	
+	CGFloat screenMaxY = self.height - bottomInset - view.height - MARGIN;
+	CGFloat screenMinY = 0.f;
+	
+	if (screenSpacePoint.y < screenMinY)
+	{
+		[UIView beginAnimations: nil
+			context: nil];
+		[UIView setAnimationDuration: duration];
+		[UIView setAnimationCurve: animationCurve];
+		
+		// Animations.
+		self.contentOffset = CGPointMake(0.f, contentSpacePoint.y);
+		self.contentInset = contentInset;
+		
+		[UIView commitAnimations];
+	}
+	else if (screenSpacePoint.y > screenMaxY)
+	{
+		// Determine the content offset that sits right below the keyboard.
+		contentSpacePoint.y = contentSpacePoint.y - screenMaxY + MARGIN;
+
+		[UIView beginAnimations: nil
+			context: nil];
+		[UIView setAnimationDuration: duration];
+		[UIView setAnimationCurve: animationCurve];
+		
+		self.contentOffset = CGPointMake(0.f, contentSpacePoint.y);
+		self.contentInset = contentInset;
+		
+		[UIView commitAnimations];
+	}
+}
+
+- (void)scrollToView: (UIView *)view
+	duration: (NSTimeInterval)duration
 	options: (UIViewAnimationOptions)options
 	bottomInset: (CGFloat)bottomInset
 {
@@ -88,7 +143,6 @@ static char CACHED_BOTTOM_CONTENT_INSET_KEY;
 				self.contentInset = contentInset;
 			}];
 	}
-
 }
 
 - (void)scrollToView: (UIView *)view
@@ -96,7 +150,7 @@ static char CACHED_BOTTOM_CONTENT_INSET_KEY;
 {
 	[self scrollToView: view
 		duration: keyboardInfo.animationDuration
-		options: keyboardInfo.animationCurveAsOptions
+		animationCurve: keyboardInfo.animationCurve
 		bottomInset: keyboardInfo.endFrame.size.height];
 }
 

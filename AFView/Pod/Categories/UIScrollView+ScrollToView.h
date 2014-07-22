@@ -10,6 +10,11 @@
 
 - (void)scrollToView: (UIView *)view
 	duration: (NSTimeInterval)duration
+	animationCurve: (UIViewAnimationCurve)animationCurve
+	bottomInset: (CGFloat)bottomInset;
+
+- (void)scrollToView: (UIView *)view
+	duration: (NSTimeInterval)duration
 	options: (UIViewAnimationOptions)options
 	bottomInset: (CGFloat)bottomInset;
 
