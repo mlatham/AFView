@@ -1,5 +1,5 @@
 #import "NSBundle+Universal.h"
-#import "AFPlatformHelper.h"
+#import "UIDevice+Hardware.h"
 
 
 #pragma mark Constants
@@ -20,7 +20,7 @@ static NSString * const NibExtension = @"nib";
 	
 	// resolve nib name and path
 	NSString *deviceNibName = [NSString stringWithFormat: @"%@_%@", nibName,
-		[AFPlatformHelper platformName]];
+		[[UIDevice currentDevice] platformName]];
 	
 	// get device-specific nib path
 	NSString *path = [self pathForResource: deviceNibName

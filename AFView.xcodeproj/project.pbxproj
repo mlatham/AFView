@@ -33,7 +33,6 @@
 		C9A7C1E7197872CF00C367AC /* AFKeyboardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C1BC197872CF00C367AC /* AFKeyboardInfo.m */; };
 		C9A7C1E8197872CF00C367AC /* AFKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C1BE197872CF00C367AC /* AFKeyboardObserver.m */; };
 		C9A7C1E9197872CF00C367AC /* AFParallaxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C1C0197872CF00C367AC /* AFParallaxHelper.m */; };
-		C9A7C1EA197872CF00C367AC /* AFPlatformHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C1C2197872CF00C367AC /* AFPlatformHelper.m */; };
 		C9A7C1EB197872CF00C367AC /* AFView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C1C5197872CF00C367AC /* AFView.m */; };
 		C9A7C1EC197872CF00C367AC /* AFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C1C7197872CF00C367AC /* AFViewController.m */; };
 		C9A7C1ED197872CF00C367AC /* AFActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C1CA197872CF00C367AC /* AFActionSheet.m */; };
@@ -43,6 +42,7 @@
 		C9A7C1F1197872CF00C367AC /* AFSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C1D2197872CF00C367AC /* AFSegmentControl.m */; };
 		C9A7C1F3197872CF00C367AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9A7C1D6197872CF00C367AC /* InfoPlist.strings */; };
 		C9A7C1F4197872CF00C367AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C1D8197872CF00C367AC /* main.m */; };
+		C9DC568419A240300066C1F7 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DC568319A240300066C1F7 /* UIDevice+Hardware.m */; };
 		EE745E858A174837B360DB28 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 273877E296C84F16A06C7F43 /* libPods-Tests.a */; };
 		FD353BB9505043D78629CCF8 /* libPods-AFView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F558D3B049B246F39A30ED11 /* libPods-AFView.a */; };
 /* End PBXBuildFile section */
@@ -108,8 +108,6 @@
 		C9A7C1BE197872CF00C367AC /* AFKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFKeyboardObserver.m; sourceTree = "<group>"; };
 		C9A7C1BF197872CF00C367AC /* AFParallaxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFParallaxHelper.h; sourceTree = "<group>"; };
 		C9A7C1C0197872CF00C367AC /* AFParallaxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFParallaxHelper.m; sourceTree = "<group>"; };
-		C9A7C1C1197872CF00C367AC /* AFPlatformHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPlatformHelper.h; sourceTree = "<group>"; };
-		C9A7C1C2197872CF00C367AC /* AFPlatformHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPlatformHelper.m; sourceTree = "<group>"; };
 		C9A7C1C4197872CF00C367AC /* AFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFView.h; sourceTree = "<group>"; };
 		C9A7C1C5197872CF00C367AC /* AFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFView.m; sourceTree = "<group>"; };
 		C9A7C1C6197872CF00C367AC /* AFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFViewController.h; sourceTree = "<group>"; };
@@ -128,6 +126,8 @@
 		C9A7C1D5197872CF00C367AC /* AFView-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFView-Prefix.pch"; sourceTree = "<group>"; };
 		C9A7C1D7197872CF00C367AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C9A7C1D8197872CF00C367AC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9DC568219A240300066C1F7 /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
+		C9DC568319A240300066C1F7 /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
 		F558D3B049B246F39A30ED11 /* libPods-AFView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AFView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -276,6 +276,8 @@
 				C9A7C1B3197872CF00C367AC /* UIView+Layout.m */,
 				C9A7C1B4197872CF00C367AC /* UIView+Universal.h */,
 				C9A7C1B5197872CF00C367AC /* UIView+Universal.m */,
+				C9DC568219A240300066C1F7 /* UIDevice+Hardware.h */,
+				C9DC568319A240300066C1F7 /* UIDevice+Hardware.m */,
 				C9A7C1B6197872CF00C367AC /* UIView+ViewController.h */,
 				C9A7C1B7197872CF00C367AC /* UIView+ViewController.m */,
 				C9A7C1B8197872CF00C367AC /* UIViewController+Presentation.h */,
@@ -293,8 +295,6 @@
 				C9A7C1BE197872CF00C367AC /* AFKeyboardObserver.m */,
 				C9A7C1BF197872CF00C367AC /* AFParallaxHelper.h */,
 				C9A7C1C0197872CF00C367AC /* AFParallaxHelper.m */,
-				C9A7C1C1197872CF00C367AC /* AFPlatformHelper.h */,
-				C9A7C1C2197872CF00C367AC /* AFPlatformHelper.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -513,7 +513,7 @@
 				C9A7C1DF197872CF00C367AC /* UITableView+Universal.m in Sources */,
 				C9A7C1E6197872CF00C367AC /* UIViewController+Presentation.m in Sources */,
 				C9A7C1DD197872CF00C367AC /* UIColor+Hex.m in Sources */,
-				C9A7C1EA197872CF00C367AC /* AFPlatformHelper.m in Sources */,
+				C9DC568419A240300066C1F7 /* UIDevice+Hardware.m in Sources */,
 				C9A7C1DA197872CF00C367AC /* AFDemoController.m in Sources */,
 				C9A7C1DC197872CF00C367AC /* NSBundle+Universal.m in Sources */,
 				C9A7C1E9197872CF00C367AC /* AFParallaxHelper.m in Sources */,

@@ -1,6 +1,6 @@
 #import "AFView.h"
-#import "AFPlatformHelper.h"
 #import "UIView+Universal.h"
+#import "UIDevice+Hardware.h"
 
 
 #pragma mark Class Definition
@@ -49,7 +49,7 @@
 	// Resolve platform-specific class (if any).
 	NSString *platformClassName = [[NSString alloc] 
 		initWithFormat: @"%@_%@", NSStringFromClass(self), 
-		[AFPlatformHelper platformName]];
+		[[UIDevice currentDevice] platformName]];
 	Class deviceClass = NSClassFromString(platformClassName);
     
     // Fallback to platform-neutral class.
@@ -65,7 +65,7 @@
 	// Resolve platform-specific class (if any).
 	NSString *platformClassName = [[NSString alloc] 
 		initWithFormat: @"%@_%@", NSStringFromClass(self), 
-		[AFPlatformHelper platformName]];
+		[[UIDevice currentDevice] platformName]];
 	Class deviceClass = NSClassFromString(platformClassName);
     
     // Fallback to platform-neutral class.
