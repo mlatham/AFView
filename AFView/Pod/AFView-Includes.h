@@ -12,6 +12,7 @@
 #import "UIView+FirstResponder.h"
 #import "UIView+Layout.h"
 #import "UIView+Universal.h"
+#import "UIDevice+Hardware.h"
 #import "UIView+ViewController.h"
 #import "UIScrollView+ScrollToView.h"
 #import "UIViewController+Presentation.h"
@@ -19,7 +20,6 @@
 // Common
 #import "AFKeyboardInfo.h"
 #import "AFKeyboardObserver.h"
-#import "AFPlatformHelper.h"
 #import "AFParallaxHelper.h"
 
 // MVC
