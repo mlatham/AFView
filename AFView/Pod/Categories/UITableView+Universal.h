@@ -10,9 +10,7 @@
 
 - (id)dequeueReusableCellWithCellClass: (Class)cellClass;
 
-- (id)dequeueReusableCellWithUniversalNibName: (NSString *)universalNibName;
-
-- (id)dequeueReusableHeaderFooterViewWithUniversalNibName: (NSString *)universalNibName;
+- (id)dequeueReusableHeaderFooterViewWithViewClass: (Class)viewClass;
 
 
 @end
