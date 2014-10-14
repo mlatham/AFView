@@ -1,12 +1,48 @@
 #import "UITableView+Universal.h"
+#import <objc/runtime.h>
 
 
-#pragma mark Class Definition
+#pragma mark Constants
+
+// Use the addresses as the key.
+static char TEMPLATE_DICTIONARY_KEY;
+
+
+#pragma mark - Class Definition
 
 @implementation UITableView (Universal)
 
 
 #pragma mark - Public Methods
+
+- (id)templateCellWithCellClass: (Class)cellClass
+{
+	id templateDictionary = (id)objc_getAssociatedObject(self, &TEMPLATE_DICTIONARY_KEY);
+	
+	// Create the template dictionary on demand.
+	if (templateDictionary == nil)
+	{
+		templateDictionary = [NSMutableDictionary dictionary];
+		
+		objc_setAssociatedObject(self, &TEMPLATE_DICTIONARY_KEY, templateDictionary, OBJC_ASSOCIATION_RETAIN);
+	}
+	
+	// Get or create the template.
+	id cell = [templateDictionary objectForKey: NSStringFromClass(cellClass)];
+	
+	// Create the cell on demand.
+	if (cell == nil)
+	{
+		// Get or create the cell via the table view.
+		cell = [self dequeueReusableCellWithCellClass: cellClass];
+		
+		// Cache the template.
+		[templateDictionary setObject: cell
+			forKey: NSStringFromClass(cellClass)];
+	}
+	
+	return cell;
+}
 
 - (id)dequeueReusableCellWithCellClass: (Class)cellClass
 {
