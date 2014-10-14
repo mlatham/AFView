@@ -77,6 +77,13 @@ static char TEMPLATE_KEY;
 	return instance;
 }
 
+- (CGFloat)heightConstrainedToTableView: (UITableView *)tableView
+	useAutoLayout: (BOOL)useAutoLayout
+{
+	return [self heightConstrainedToWidth: tableView.frame.size.width
+		useAutoLayout: useAutoLayout];
+}
+
 - (CGFloat)heightConstrainedToWidth: (CGFloat)width
 	useAutoLayout: (BOOL)useAutoLayout
 {
