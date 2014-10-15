@@ -14,6 +14,11 @@
 
 #pragma mark - Instance Methods
 
++ (instancetype)cellWithNibName: (NSString *)nibName;
+
++ (instancetype)cellWithNibName: (NSString *)nibName
+	bundle: (NSBundle *)nibBundleOrNil;
+
 // Lays out this cell's subviews and returns the height that fits the provided width.
 
 - (CGFloat)heightConstrainedToTableView: (UITableView *)tableView

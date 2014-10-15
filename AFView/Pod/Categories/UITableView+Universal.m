@@ -16,6 +16,38 @@ static char TEMPLATE_DICTIONARY_KEY;
 
 #pragma mark - Public Methods
 
+- (id)templateCellWithCellNibNamed: (NSString *)nibName
+{
+	id templateDictionary = (id)objc_getAssociatedObject(self, &TEMPLATE_DICTIONARY_KEY);
+	
+	// Create the template dictionary on demand.
+	if (templateDictionary == nil)
+	{
+		templateDictionary = [NSMutableDictionary dictionary];
+		
+		objc_setAssociatedObject(self, &TEMPLATE_DICTIONARY_KEY, templateDictionary, OBJC_ASSOCIATION_RETAIN);
+	}
+	
+	// Get or create the template.
+	UITableViewCell *cell = [templateDictionary objectForKey: nibName];
+	
+	// Create the cell on demand.
+	if (cell == nil)
+	{
+		// Get or create the cell via the table view.
+		cell = [UITableViewCell cellWithNibName: nibName];
+		
+		// Set the template flag.
+		cell.isTemplate = YES;
+		
+		// Cache the template.
+		[templateDictionary setObject: cell
+			forKey: nibName];
+	}
+	
+	return cell;
+}
+
 - (id)templateCellWithCellClass: (Class)cellClass
 {
 	id templateDictionary = (id)objc_getAssociatedObject(self, &TEMPLATE_DICTIONARY_KEY);

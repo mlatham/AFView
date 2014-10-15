@@ -41,6 +41,33 @@ static char IS_TEMPLATE_KEY;
 
 #pragma mark - Public Methods
 
++ (instancetype)cellWithNibName: (NSString *)nibName
+{
+	return [self cellWithNibName: nibName
+		bundle: nil];
+}
+
++ (instancetype)cellWithNibName: (NSString *)nibName
+	bundle: (NSBundle *)nibBundleOrNil
+{
+	NSBundle *bundle = nibBundleOrNil == nil 
+		? [NSBundle mainBundle] 
+		: nibBundleOrNil;
+
+	NSArray *nibContents = [bundle
+		loadNibNamed: nibName
+		owner: self 
+		options: nil];
+	
+	// Return first object in nib.
+	id nibRoot = [nibContents objectAtIndex: 0];
+	
+	// Validate nib contained a cell.
+	NSAssert([nibRoot isKindOfClass: UITableViewCell.class], @"Expected a UITableViewCell at the nib root");
+	
+	return nibRoot;
+}
+
 - (CGFloat)heightConstrainedToTableView: (UITableView *)tableView
 	useAutoLayout: (BOOL)useAutoLayout
 {
