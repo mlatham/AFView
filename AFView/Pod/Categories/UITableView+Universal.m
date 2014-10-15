@@ -80,6 +80,20 @@ static char TEMPLATE_DICTIONARY_KEY;
 	return cell;
 }
 
+- (id)dequeueReusableCellWithNibName: (NSString *)nibName
+{
+	// Reuse cell if possible (or create one).
+	UITableViewCell *cell = [self dequeueReusableCellWithIdentifier: nibName];
+	
+	// Create the cell on demand.
+	if (cell == nil)
+	{
+		cell = [UITableViewCell cellWithNibName: nibName];
+	}
+	
+	return cell;
+}
+
 - (id)dequeueReusableCellWithCellClass: (Class)cellClass
 {
 	NSString *className = NSStringFromClass(cellClass);

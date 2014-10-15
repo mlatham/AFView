@@ -8,9 +8,11 @@
 
 #pragma mark - Instance Methods
 
-- (id)templateCellWithCellNibNamed: (NSString *)nibName;
+- (id)templateCellWithCellNibName: (NSString *)nibName;
 
 - (id)templateCellWithCellClass: (Class)cellClass;
+
+- (id)dequeueReusableCellWithNibName: (NSString *)nibName;
 
 - (id)dequeueReusableCellWithCellClass: (Class)cellClass;
 
