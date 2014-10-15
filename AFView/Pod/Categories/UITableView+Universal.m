@@ -16,7 +16,7 @@ static char TEMPLATE_DICTIONARY_KEY;
 
 #pragma mark - Public Methods
 
-- (id)templateCellWithCellNibNamed: (NSString *)nibName
+- (id)templateCellWithCellNibName: (NSString *)nibName
 {
 	id templateDictionary = (id)objc_getAssociatedObject(self, &TEMPLATE_DICTIONARY_KEY);
 	
