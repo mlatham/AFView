@@ -8,6 +8,8 @@
 
 #pragma mark - Instance Methods
 
+- (id)templateCellWithCellClass: (Class)cellClass;
+
 - (id)dequeueReusableCellWithCellClass: (Class)cellClass;
 
 - (id)dequeueReusableHeaderFooterViewWithViewClass: (Class)viewClass;
