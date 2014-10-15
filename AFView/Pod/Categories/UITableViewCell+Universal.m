@@ -1,10 +1,45 @@
 #import "UITableViewCell+Universal.h"
 #import "NSBundle+Universal.h"
+#import <objc/runtime.h>
+
+
+#pragma mark Constants
+
+// Use the addresses as the key.
+static char IS_TEMPLATE_KEY;
 
 
 #pragma mark - Class Definition
 
 @implementation UITableViewCell (Universal)
+
+
+#pragma mark - Properties
+
+- (void)setIsTemplate: (BOOL)isTemplate
+{
+	NSNumber *isTemplateAssociated = [NSNumber numberWithBool: isTemplate];
+		
+	objc_setAssociatedObject(self, &IS_TEMPLATE_KEY, isTemplateAssociated, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (BOOL)isTemplate
+{
+	id isTemplate = (id)objc_getAssociatedObject(self, &IS_TEMPLATE_KEY);
+	
+	// If unset - this is not a template.
+	if (isTemplate == nil)
+	{
+		return NO;
+	}
+	else
+	{
+		return [isTemplate boolValue];
+	}
+}
+
+
+#pragma mark - Public Methods
 
 - (CGFloat)heightConstrainedToTableView: (UITableView *)tableView
 	useAutoLayout: (BOOL)useAutoLayout

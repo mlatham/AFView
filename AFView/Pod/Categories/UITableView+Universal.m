@@ -1,4 +1,5 @@
 #import "UITableView+Universal.h"
+#import "UITableViewCell+Universal.h"
 #import <objc/runtime.h>
 
 
@@ -28,13 +29,16 @@ static char TEMPLATE_DICTIONARY_KEY;
 	}
 	
 	// Get or create the template.
-	id cell = [templateDictionary objectForKey: NSStringFromClass(cellClass)];
+	UITableViewCell *cell = [templateDictionary objectForKey: NSStringFromClass(cellClass)];
 	
 	// Create the cell on demand.
 	if (cell == nil)
 	{
 		// Get or create the cell via the table view.
-		cell = [self dequeueReusableCellWithCellClass: cellClass];
+		cell = cellClass.new;
+		
+		// Set the template flag.
+		cell.isTemplate = YES;
 		
 		// Cache the template.
 		[templateDictionary setObject: cell
@@ -50,6 +54,8 @@ static char TEMPLATE_DICTIONARY_KEY;
 	
 	// Reuse cell if possible (or create one).
 	UITableViewCell *cell = [self dequeueReusableCellWithIdentifier: className];
+	
+	// Create the cell on demand.
 	if (cell == nil)
 	{
 		cell = cellClass.new;
@@ -64,6 +70,8 @@ static char TEMPLATE_DICTIONARY_KEY;
 	
 	// Reuse view if possible (or create one).
 	UIView *view = [self dequeueReusableHeaderFooterViewWithIdentifier: className];
+	
+	// Create the cell on demand.
 	if (view == nil)
 	{
 		view = viewClass.new;
