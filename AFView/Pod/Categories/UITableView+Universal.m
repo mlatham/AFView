@@ -52,6 +52,8 @@ static char TEMPLATE_DICTIONARY_KEY;
 {
 	id templateDictionary = (id)objc_getAssociatedObject(self, &TEMPLATE_DICTIONARY_KEY);
 	
+	NSString *cellClassName = NSStringFromClass(cellClass);
+	
 	// Create the template dictionary on demand.
 	if (templateDictionary == nil)
 	{
@@ -61,20 +63,22 @@ static char TEMPLATE_DICTIONARY_KEY;
 	}
 	
 	// Get or create the template.
-	UITableViewCell *cell = [templateDictionary objectForKey: NSStringFromClass(cellClass)];
+	UITableViewCell *cell = [templateDictionary objectForKey: cellClassName];
 	
 	// Create the cell on demand.
 	if (cell == nil)
 	{
 		// Get or create the cell via the table view.
-		cell = cellClass.new;
+		cell = [[cellClass alloc]
+			initWithStyle: UITableViewCellStyleDefault
+			reuseIdentifier: cellClassName];
 		
 		// Set the template flag.
 		cell.isTemplate = YES;
 		
 		// Cache the template.
 		[templateDictionary setObject: cell
-			forKey: NSStringFromClass(cellClass)];
+			forKey: cellClassName];
 	}
 	
 	return cell;
@@ -96,15 +100,17 @@ static char TEMPLATE_DICTIONARY_KEY;
 
 - (id)dequeueReusableCellWithCellClass: (Class)cellClass
 {
-	NSString *className = NSStringFromClass(cellClass);
+	NSString *cellClassName = NSStringFromClass(cellClass);
 	
 	// Reuse cell if possible (or create one).
-	UITableViewCell *cell = [self dequeueReusableCellWithIdentifier: className];
+	UITableViewCell *cell = [self dequeueReusableCellWithIdentifier: cellClassName];
 	
 	// Create the cell on demand.
 	if (cell == nil)
 	{
-		cell = cellClass.new;
+		cell = [[cellClass alloc]
+			initWithStyle: UITableViewCellStyleDefault
+			reuseIdentifier: cellClassName];
 	}
 	
 	return cell;
@@ -112,10 +118,10 @@ static char TEMPLATE_DICTIONARY_KEY;
 
 - (id)dequeueReusableHeaderFooterViewWithViewClass: (Class)viewClass
 {
-	NSString *className = NSStringFromClass(viewClass);
+	NSString *cellClassName = NSStringFromClass(viewClass);
 	
 	// Reuse view if possible (or create one).
-	UIView *view = [self dequeueReusableHeaderFooterViewWithIdentifier: className];
+	UIView *view = [self dequeueReusableHeaderFooterViewWithIdentifier: cellClassName];
 	
 	// Create the cell on demand.
 	if (view == nil)
