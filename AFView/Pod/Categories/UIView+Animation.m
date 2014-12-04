@@ -40,6 +40,43 @@
 	}
 }
 
+
++ (void)animateIf: (BOOL)animate
+	animateWithDuration: (NSTimeInterval)duration
+	delay: (NSTimeInterval)delay
+	usingSpringWithDamping: (CGFloat)damping
+	initialSpringVelocity: (CGFloat)initialSpringVelocity
+	options: (UIViewAnimationOptions)options
+	animations: (void (^)(void))animations 
+	completion: (void (^)(BOOL finished))completion
+{
+	if (animate == YES)
+	{
+		// animate change
+		[UIView animateWithDuration: duration 
+			delay: delay
+			usingSpringWithDamping: damping
+			initialSpringVelocity: initialSpringVelocity
+			options: options
+			animations: animations 
+			completion: completion];
+	}
+	else
+	{
+		// explicitly apply change, if provided.
+		if (animations != nil)
+		{
+			animations();
+		}
+		
+		// call completion, if provided.
+		if (completion != nil)
+		{
+			completion(YES);
+		}
+	}
+}
+
 - (void)shake
 {
 	CGFloat t = 2.0;

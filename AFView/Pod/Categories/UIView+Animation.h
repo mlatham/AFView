@@ -16,6 +16,15 @@
 	animations: (void (^)(void))animations 
 	completion: (void (^)(BOOL finished))completion;
 
++ (void)animateIf: (BOOL)animate
+	animateWithDuration: (NSTimeInterval)duration
+	delay: (NSTimeInterval)delay
+	usingSpringWithDamping: (CGFloat)damping
+	initialSpringVelocity: (CGFloat)initialSpringVelocity
+	options: (UIViewAnimationOptions)options
+	animations: (void (^)(void))animations 
+	completion: (void (^)(BOOL finished))completion;
+
 
 #pragma mark - Instance Methods
 
