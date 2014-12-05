@@ -52,6 +52,10 @@
 		position.x = xFinal;
 	}
 	_target.layer.position = position;
+	
+	// Force relayout after making these changes.
+	[_target setNeedsLayout];
+	[_target layoutIfNeeded];
 }
 
 
