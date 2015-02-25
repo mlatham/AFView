@@ -110,10 +110,6 @@ static char IS_TEMPLATE_KEY;
 	{
 		// Get the height.
 		CGFloat height = [self.contentView systemLayoutSizeFittingSize: UILayoutFittingCompressedSize].height;
-
-		// Add an extra point to the height to account for the cell separator, which is added between the bottom
-		// of the cell's contentView and the bottom of the table view cell.
-		height += 1.0f;
 		
 		// Return the height.
 		return height;
