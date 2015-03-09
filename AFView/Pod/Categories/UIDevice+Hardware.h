@@ -17,11 +17,13 @@ typedef enum
     AFDevice4iPhone,
     AFDevice4SiPhone,
     AFDevice5iPhone,
+	AFDevice6iPhone,
     
     AFDevice1GiPod,
     AFDevice2GiPod,
     AFDevice3GiPod,
     AFDevice4GiPod,
+	AFDevice5GiPod,
     
     AFDevice1GiPad,
     AFDevice2GiPad,

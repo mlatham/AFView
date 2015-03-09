@@ -40,12 +40,14 @@ static NSString *_OSVersion = nil;
     if ([platform hasPrefix: @"iPhone3"])            return AFDevice4iPhone;
     if ([platform hasPrefix: @"iPhone4"])            return AFDevice4SiPhone;
     if ([platform hasPrefix: @"iPhone5"])            return AFDevice5iPhone;
+    if ([platform hasPrefix: @"iPhone6"])            return AFDevice6iPhone;
     
     // iPod
     if ([platform hasPrefix: @"iPod1"])              return AFDevice1GiPod;
     if ([platform hasPrefix: @"iPod2"])              return AFDevice2GiPod;
     if ([platform hasPrefix: @"iPod3"])              return AFDevice3GiPod;
     if ([platform hasPrefix: @"iPod4"])              return AFDevice4GiPod;
+    if ([platform hasPrefix: @"iPod5"])              return AFDevice5GiPod;
 
     // iPad
     if ([platform hasPrefix: @"iPad1"])              return AFDevice1GiPad;
@@ -112,14 +114,12 @@ static NSString *_OSVersion = nil;
 
 - (CGFloat)contentWidth
 {
-	UIScreen *mainScreen = [UIScreen mainScreen];
-	return mainScreen.applicationFrame.size.width;
+	return [self contentWidthForOrientation: self.AFDeviceOrientation];
 }
 
 - (CGFloat)contentHeight
 {
-	UIScreen *mainScreen = [UIScreen mainScreen];
-	return mainScreen.applicationFrame.size.height;
+	return [self contentHeightForOrientation: self.AFDeviceOrientation];
 }
 
 - (CGFloat)keyboardHeight
