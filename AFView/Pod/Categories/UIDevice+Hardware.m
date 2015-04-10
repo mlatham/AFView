@@ -51,8 +51,16 @@ static NSString *_OSVersion = nil;
 
     // iPad
     if ([platform hasPrefix: @"iPad1"])              return AFDevice1GiPad;
-    if ([platform hasPrefix: @"iPad2"])              return AFDevice2GiPad;
-    if ([platform hasPrefix: @"iPad3"])              return AFDevice3GiPad;
+	
+	// HACK: Don't bundle iPad 2 in with iPad 2 Mini.
+    if ([platform hasPrefix: @"iPad2,1"]
+		|| [platform hasPrefix: @"iPad2,2"]
+		|| [platform hasPrefix: @"iPad2,3"]
+		|| [platform hasPrefix: @"iPad2,4"])
+	{
+		return AFDevice2GiPad;
+	}
+	if ([platform hasPrefix: @"iPad3"])              return AFDevice3GiPad;
     if ([platform hasPrefix: @"iPad4"])              return AFDevice4GiPad;
     
     // Apple TV
