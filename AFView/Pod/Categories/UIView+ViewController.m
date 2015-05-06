@@ -33,21 +33,35 @@
 {
 	[self presentViewController: viewController
 		inNavigationControllerWithClass: nil
-		animated: YES
-		completion: nil];
-}
-
-- (void)presentViewController:(UIViewController *)viewController
-	inNavigationControllerWithClass: (Class)navigationControllerClass
-{
-	[self presentViewController: viewController
-		inNavigationControllerWithClass: navigationControllerClass
+		hideNavigationBar: NO
 		animated: YES
 		completion: nil];
 }
 
 - (void)presentViewController: (UIViewController *)viewController
 	inNavigationControllerWithClass: (Class)navigationControllerClass
+{
+	[self presentViewController: viewController
+		inNavigationControllerWithClass: navigationControllerClass
+		hideNavigationBar: NO
+		animated: YES
+		completion: nil];
+}
+
+- (void)presentViewController: (UIViewController *)viewController
+	inNavigationControllerWithClass: (Class)navigationControllerClass
+	hideNavigationBar: (BOOL)hideNavigationBar
+{
+	[self presentViewController: viewController
+		inNavigationControllerWithClass: navigationControllerClass
+		hideNavigationBar: hideNavigationBar
+		animated: YES
+		completion: nil];
+}
+
+- (void)presentViewController: (UIViewController *)viewController
+	inNavigationControllerWithClass: (Class)navigationControllerClass
+	hideNavigationBar: (BOOL)hideNavigationBar
 	animated: (BOOL)animated
 	completion: (void (^)(void))completion
 {
@@ -61,6 +75,13 @@
 		id navigationController = [[navigationControllerClass alloc]
 			initWithRootViewController: viewController];
 		viewController = navigationController;
+		
+		// Hide the navigation bar if requested.
+		if (hideNavigationBar == YES
+			&& [navigationController respondsToSelector: @selector(setNavigationBarHidden:)])
+		{
+			[navigationController setNavigationBarHidden: YES];
+		}
 	}
 	
 	// Present the view controller.

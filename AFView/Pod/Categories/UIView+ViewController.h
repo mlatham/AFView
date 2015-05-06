@@ -17,8 +17,13 @@
 - (void)presentViewController:(UIViewController *)viewController
 	inNavigationControllerWithClass: (Class)navigationControllerClass;
 
+- (void)presentViewController:(UIViewController *)viewController
+	inNavigationControllerWithClass: (Class)navigationControllerClass
+	hideNavigationBar: (BOOL)hideNavigationBar;
+
 - (void)presentViewController: (UIViewController *)viewController
 	inNavigationControllerWithClass: (Class)navigationControllerClass
+	hideNavigationBar: (BOOL)hideNavigationBar
 	animated: (BOOL)animated
 	completion: (void (^)(void))completion;
 
