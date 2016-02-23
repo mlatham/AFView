@@ -1,28 +1,14 @@
 PODS:
   - AFView (0.1.0)
-  - Expecta (0.3.1)
-  - EXPMatchers+FBSnapshotTest (1.1.0):
-    - Expecta
-    - FBSnapshotTestCase
-  - FBSnapshotTestCase (1.1)
-  - Specta (0.2.1)
 
 DEPENDENCIES:
-  - AFView (from `../`)
-  - Expecta
-  - EXPMatchers+FBSnapshotTest
-  - FBSnapshotTestCase
-  - Specta (~> 0.2.1)
+  - AFView (from `.`)
 
 EXTERNAL SOURCES:
   AFView:
-    :path: ../
+    :path: .
 
 SPEC CHECKSUMS:
-  AFView: 825eff33f8d47dd98fd23b020871f995c9d2e0ea
-  Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
-  EXPMatchers+FBSnapshotTest: fcc428d6a5d4410c1711aeda4456c9c5e93f98d3
-  FBSnapshotTestCase: 9053afee1d66b4c7c313fcb0ae582a5e47bea9d0
-  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
+  AFView: 5c7ba7581be07998f5719770bb753c4bf625be88
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.38.2

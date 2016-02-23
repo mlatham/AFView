@@ -1,12 +1,19 @@
-target 'AFView', :exclusive => true do
-  pod "AFView", :path => "../"
+workspace 'AFView'
+
+xcodeproj 'AFView.xcodeproj', 'Debug' => :debug, 'Release' => :release
+
+target 'AFViewExample' do
+	xcodeproj 'AFViewExample.xcodeproj', 'Debug' => :debug, 'Release' => :release
+
+	platform :ios, '8.0'
+	
+	use_frameworks!
+	
+	pod 'AFView', :path => '.'
 end
 
-target 'Tests', :exclusive => true do
-  pod "AFView", :path => "../"
+target 'AFView' do
+	xcodeproj 'AFView.xcodeproj', 'Debug' => :debug, 'Release' => :release
 
-  pod 'Specta', '~> 0.2.1'
-  pod 'Expecta'
-  pod 'FBSnapshotTestCase'
-  pod 'EXPMatchers+FBSnapshotTest'
+	platform :ios, '8.0'
 end

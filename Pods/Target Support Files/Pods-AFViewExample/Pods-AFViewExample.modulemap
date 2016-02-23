@@ -1,0 +1,6 @@
+framework module Pods_AFViewExample {
+  umbrella header "Pods-AFViewExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

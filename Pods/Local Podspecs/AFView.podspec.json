@@ -1,0 +1,22 @@
+{
+  "name": "AFView",
+  "version": "0.1.0",
+  "summary": "A view composition and layout framework for iOS.",
+  "description": "A view composition and layout framework for iOS, supporting nibs when they're useful and code when they're not.",
+  "homepage": "https://github.com/mlatham/AFView",
+  "license": "WTFPL",
+  "authors": {
+    "Matt Latham": "matt.e.latham@gmail.com"
+  },
+  "social_media_url": "https://twitter.com/mattlath",
+  "source": {
+    "git": "https://github.com/mlatham/AFView.git",
+    "tag": "v0.1.0"
+  },
+  "source_files": "AFView/Pod/**/*.swift",
+  "prefix_header_contents": "#import \"AFView-Includes.h\"",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true
+}
