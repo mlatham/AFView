@@ -105,7 +105,7 @@ extension UIView
 			},
 			completion:
 			{
-				(Bool finished) -> Void in
+				(finished) -> Void in
 			
 				if (finished)
 				{
