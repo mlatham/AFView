@@ -6,15 +6,19 @@ extension UIScrollView
 
 	private static let MARGIN: CGFloat = 8;
 	
-	private struct AssociatedKeys {
+	private struct AssociatedKeys
+	{
         static var CachedBottomContentInsetKey = "UIScrollView.ScrollToView"
     }
 	
-	var cachedBottomContentInset: NSNumber? {
-		get {
+	var cachedBottomContentInset: NSNumber?
+	{
+		get
+		{
 			return objc_getAssociatedObject(self, &AssociatedKeys.CachedBottomContentInsetKey) as? NSNumber
 		}
-		set (value) {
+		set (value)
+		{
 			objc_setAssociatedObject(self, &AssociatedKeys.CachedBottomContentInsetKey, value, .OBJC_ASSOCIATION_RETAIN)
 		}
 	}
@@ -140,64 +144,65 @@ extension UIScrollView
 			bottomInset: keyboardInfo.endFrame.size.height)
 	}
 	
-//
-//- (void)scrollToFirstResponderWithKeyboardInfo: (AFKeyboardInfo *)keyboardInfo
-//{
-//	UIView *view = [UIWindow findFirstResponder];
-//	
-//	[self scrollToView: view
-//		keyboardInfo: keyboardInfo];
-//}
-//
-//- (void)clearBottomInsetWithDuration: (NSTimeInterval)duration
-//	options: (UIViewAnimationOptions)options
-//{
-//	UIEdgeInsets contentInset = self.contentInset;
-//	contentInset.bottom = 0.f;
-//	
-//	// Get the cached bottom content inset.
-//	NSNumber *cachedBottomContentInset = [self cachedBottomContentInset];
-//	
-//	// Apply the cached bottom content inset, if set.
-//	if (cachedBottomContentInset != nil)
-//	{
-//		contentInset.bottom = [cachedBottomContentInset floatValue];
-//		
-//		// Unset the cached copy.
-//		[self setCachedBottomContentInset: nil];
-//	}
-//	
-//	[UIView animateWithDuration: duration
-//		delay: 0
-//		options: options
-//		animations: ^
-//		{
-//			self.contentInset = contentInset;
-//		}
-//		completion: nil];
-//}
-//
-//- (void)sizeToFitContent
-//{
-//	CGFloat height = 0;
-//	
-//	for (UIView *view in self.subviews)
-//	{
-//		// Only take into account visible views.
-//		if (view.hidden == NO)
-//		{
-//			CGFloat position = view.frame.size.height + view.frame.origin.y;
-//			
-//			if (position > height)
-//			{
-//				height = position;
-//			}
-//		}
-//	}
-//	
-//	CGSize contentSize = self.contentSize;
-//	contentSize.height = height;
-//	self.contentSize = contentSize;
-//}
+	public func scrollToFirstResponder(keyboardInfo: AFKeyboardInfo)
+	{
+		let view: UIView? = UIWindow.findFirstResponder()
+		
+		if let view = view
+		{
+			self.scrollToView(view,
+				keyboardInfo: keyboardInfo)
+		}
+	}
 	
+	public func clearBottomInset(duration: NSTimeInterval,
+		options: UIViewAnimationOptions)
+	{
+		var contentInset: UIEdgeInsets = self.contentInset
+		contentInset.bottom = 0
+		
+		// Get the cached bottom content inset.
+		let bottom = self.cachedBottomContentInset
+		
+		// Apply the cached bottom content inset, if set.
+		if let bottom = bottom
+		{
+			contentInset.bottom = CGFloat(bottom.floatValue)
+			
+			// Unset the cached copy.
+			self.cachedBottomContentInset = nil
+		}
+		
+		UIView.animateWithDuration(duration,
+			delay: 0,
+			options: options,
+			animations:
+			{
+				self.contentInset = contentInset
+			},
+			completion: nil)
+	}
+	
+	public func sizeToFitContent()
+	{
+		var height: CGFloat = 0
+		
+		for view in self.subviews
+		{
+			// Only take into account visible views.
+			if !view.hidden
+			{
+				let position: CGFloat = view.frame.size.height + view.frame.origin.y
+				
+				if (position > height)
+				{
+					height = position
+				}
+			}
+		}
+		
+		var contentSize: CGSize = self.contentSize
+		contentSize.height = height
+		self.contentSize = contentSize
+	}
 }

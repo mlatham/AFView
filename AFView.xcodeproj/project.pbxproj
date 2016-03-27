@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C924824E1C70FDD600019A7B /* AFView-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C924824C1C70FDD600019A7B /* AFView-Info.plist */; };
 		C924828F1C70FF6400019A7B /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924828E1C70FF6400019A7B /* UIView+Animation.swift */; };
 		C92482931C7115B200019A7B /* AFView.h in Headers */ = {isa = PBXBuildFile; fileRef = C92482921C7115B200019A7B /* AFView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C92482951C71796E00019A7B /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92482941C71796E00019A7B /* UIColor+Hex.swift */; };
@@ -19,20 +18,11 @@
 		C92482A51C7188B500019A7B /* UIViewController+Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92482A41C7188B500019A7B /* UIViewController+Presentation.swift */; };
 		C92482B41C72D25F00019A7B /* AFKeyboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92482B31C72D25F00019A7B /* AFKeyboardInfo.swift */; };
 		C92482B61C74188000019A7B /* AFKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92482B51C74188000019A7B /* AFKeyboardObserver.swift */; };
-		C9658E6D1CA6D967008D82DA /* AFPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9658E6C1CA6D967008D82DA /* AFPageControl.swift */; };
-		C9658E6F1CA72AD6008D82DA /* AFSegmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9658E6E1CA72AD6008D82DA /* AFSegmentButton.swift */; };
 		C9658E711CA72C5B008D82DA /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9658E701CA72C5B008D82DA /* UIView+Layout.swift */; };
-		C9658E731CA76123008D82DA /* AFSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9658E721CA76123008D82DA /* AFSegmentControl.swift */; };
 		C98231111C70F75000FEA8F2 /* AFView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C982310E1C70F75000FEA8F2 /* AFView.podspec */; };
 		C98231121C70F75000FEA8F2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C982310F1C70F75000FEA8F2 /* LICENSE */; };
-		C98231131C70F75000FEA8F2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C98231101C70F75000FEA8F2 /* README.md */; };
 		C9F003171C7AAD12002416B9 /* AFParallaxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F003161C7AAD12002416B9 /* AFParallaxHelper.swift */; };
 		C9F003261C7BF4E8002416B9 /* AFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F003251C7BF4E8002416B9 /* AFViewController.swift */; };
-		C9F003361C7C84A6002416B9 /* AFProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = C9F0032C1C7C84A6002416B9 /* AFProgressView.h */; };
-		C9F003371C7C84A6002416B9 /* AFProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F0032D1C7C84A6002416B9 /* AFProgressView.m */; };
-		C9F0033A1C7C84A6002416B9 /* AFSegmentControl.h in Headers */ = {isa = PBXBuildFile; fileRef = C9F003301C7C84A6002416B9 /* AFSegmentControl.h */; };
-		C9F0033B1C7C84A6002416B9 /* AFSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F003311C7C84A6002416B9 /* AFSegmentControl.m */; };
-		C9F0033D1C7C84BC002416B9 /* AFActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0033C1C7C84BC002416B9 /* AFActionSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,21 +38,13 @@
 		C92482A41C7188B500019A7B /* UIViewController+Presentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Presentation.swift"; sourceTree = "<group>"; };
 		C92482B31C72D25F00019A7B /* AFKeyboardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFKeyboardInfo.swift; sourceTree = "<group>"; };
 		C92482B51C74188000019A7B /* AFKeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFKeyboardObserver.swift; sourceTree = "<group>"; };
-		C9658E6C1CA6D967008D82DA /* AFPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFPageControl.swift; sourceTree = "<group>"; };
-		C9658E6E1CA72AD6008D82DA /* AFSegmentButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFSegmentButton.swift; sourceTree = "<group>"; };
 		C9658E701CA72C5B008D82DA /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
-		C9658E721CA76123008D82DA /* AFSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFSegmentControl.swift; sourceTree = "<group>"; };
 		C98231021C70F69E00FEA8F2 /* AFView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C982310E1C70F75000FEA8F2 /* AFView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AFView.podspec; sourceTree = "<group>"; };
 		C982310F1C70F75000FEA8F2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C98231101C70F75000FEA8F2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C9F003161C7AAD12002416B9 /* AFParallaxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFParallaxHelper.swift; sourceTree = "<group>"; };
 		C9F003251C7BF4E8002416B9 /* AFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFViewController.swift; sourceTree = "<group>"; };
-		C9F0032C1C7C84A6002416B9 /* AFProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFProgressView.h; sourceTree = "<group>"; };
-		C9F0032D1C7C84A6002416B9 /* AFProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFProgressView.m; sourceTree = "<group>"; };
-		C9F003301C7C84A6002416B9 /* AFSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSegmentControl.h; sourceTree = "<group>"; };
-		C9F003311C7C84A6002416B9 /* AFSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSegmentControl.m; sourceTree = "<group>"; };
-		C9F0033C1C7C84BC002416B9 /* AFActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +132,6 @@
 		C98231141C70F77F00FEA8F2 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				C9F003271C7C84A6002416B9 /* Views */,
 				C9F0031C1C7BF4A9002416B9 /* MVC */,
 				C92482A61C72D23B00019A7B /* Common */,
 				C92482591C70FE8C00019A7B /* Categories */,
@@ -166,21 +147,6 @@
 			path = MVC;
 			sourceTree = "<group>";
 		};
-		C9F003271C7C84A6002416B9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C9F0032C1C7C84A6002416B9 /* AFProgressView.h */,
-				C9F0032D1C7C84A6002416B9 /* AFProgressView.m */,
-				C9F003301C7C84A6002416B9 /* AFSegmentControl.h */,
-				C9F003311C7C84A6002416B9 /* AFSegmentControl.m */,
-				C9F0033C1C7C84BC002416B9 /* AFActionSheet.swift */,
-				C9658E6C1CA6D967008D82DA /* AFPageControl.swift */,
-				C9658E6E1CA72AD6008D82DA /* AFSegmentButton.swift */,
-				C9658E721CA76123008D82DA /* AFSegmentControl.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -189,8 +155,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C92482931C7115B200019A7B /* AFView.h in Headers */,
-				C9F003361C7C84A6002416B9 /* AFProgressView.h in Headers */,
-				C9F0033A1C7C84A6002416B9 /* AFSegmentControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +185,7 @@
 		C98230F91C70F69E00FEA8F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Matt Latham";
 				TargetAttributes = {
@@ -253,7 +218,6 @@
 			files = (
 				C98231121C70F75000FEA8F2 /* LICENSE in Resources */,
 				C98231111C70F75000FEA8F2 /* AFView.podspec in Resources */,
-				C924824E1C70FDD600019A7B /* AFView-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,24 +230,17 @@
 			files = (
 				C92482A51C7188B500019A7B /* UIViewController+Presentation.swift in Sources */,
 				C92482951C71796E00019A7B /* UIColor+Hex.swift in Sources */,
-				C9F003371C7C84A6002416B9 /* AFProgressView.m in Sources */,
 				C92482A31C7188A200019A7B /* UIView+ViewController.swift in Sources */,
 				C9658E711CA72C5B008D82DA /* UIView+Layout.swift in Sources */,
-				C98231131C70F75000FEA8F2 /* README.md in Sources */,
 				C924829F1C71881000019A7B /* UITableViewCell+Extras.swift in Sources */,
 				C92482B41C72D25F00019A7B /* AFKeyboardInfo.swift in Sources */,
-				C9F0033B1C7C84A6002416B9 /* AFSegmentControl.m in Sources */,
 				C92482B61C74188000019A7B /* AFKeyboardObserver.swift in Sources */,
 				C924829B1C7187C000019A7B /* UIScrollView+ScrollToView.swift in Sources */,
 				C924828F1C70FF6400019A7B /* UIView+Animation.swift in Sources */,
 				C9F003171C7AAD12002416B9 /* AFParallaxHelper.swift in Sources */,
-				C9658E6F1CA72AD6008D82DA /* AFSegmentButton.swift in Sources */,
 				C92482A11C71883000019A7B /* UIView+FirstResponder.swift in Sources */,
 				C924829D1C71880000019A7B /* UITableView+Extras.swift in Sources */,
-				C9F0033D1C7C84BC002416B9 /* AFActionSheet.swift in Sources */,
 				C9F003261C7BF4E8002416B9 /* AFViewController.swift in Sources */,
-				C9658E6D1CA6D967008D82DA /* AFPageControl.swift in Sources */,
-				C9658E731CA76123008D82DA /* AFSegmentControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,7 +43,7 @@ public class AFKeyboardInfo : NSObject
 
 	// MARK: - Public Methods
 
-	public func animate(animations: AnimationBlock?)
+	public func animate(animations: (() -> ())?)
 	{
 		// Animate using the keyboard options animation options.
 		UIView.beginAnimations(nil,

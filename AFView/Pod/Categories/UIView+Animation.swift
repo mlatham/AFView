@@ -1,8 +1,5 @@
 import Foundation
 
-public typealias AnimationBlock = (Void) -> Void
-public typealias CompletionBlock = (Bool) -> Void
-
 extension UIView
 {
 	// MARK: - Static Methods
@@ -15,8 +12,8 @@ extension UIView
 		duration: NSTimeInterval,
 		delay: NSTimeInterval,
 		options: UIViewAnimationOptions,
-		animations: AnimationBlock,
-		completion: CompletionBlock?)
+		animations: () -> (),
+		completion: ((Bool) -> ())?)
 	{
 		if (animate)
 		{
@@ -50,8 +47,8 @@ extension UIView
 		damping: CGFloat,
 		initialSpringVelocity: CGFloat,
 		options: UIViewAnimationOptions,
-		animations: AnimationBlock,
-		completion: CompletionBlock?)
+		animations: () -> (),
+		completion: ((Bool) -> ())?)
 	{
 		if (animate)
 		{

@@ -16,12 +16,12 @@ public class AFViewController : UIViewController
 	
 	// MARK: - Constructors
 	
-	public init(universalNibName: String)
+	public init(nibName: String)
 	{
 		_visible = false
 	
 		// TODO: Remove this class post refactor.
-		super.init(nibName: universalNibName, bundle: NSBundle.mainBundle())
+		super.init(nibName: nibName, bundle: NSBundle.mainBundle())
 	}
 	
 	public required init?(coder aDecoder: NSCoder)
