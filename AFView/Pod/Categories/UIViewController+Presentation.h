@@ -22,6 +22,11 @@
 	animated: (BOOL)animated
 	completion: (void (^)(void))completion;
 
+- (void)presentActionSheetWithTitle: (NSString *)title
+	message: (NSString *)message
+	preferredStyle: (UIAlertControllerStyle)preferredStyle
+	actions: (NSArray *)actions;
+
 - (BOOL)canGoBack;
 
 

@@ -92,6 +92,24 @@
 		completion: completion];
 }
 
+- (void)presentActionSheetWithTitle: (NSString *)title
+	message: (NSString *)message
+	preferredStyle: (UIAlertControllerStyle)preferredStyle
+	actions: (NSArray *)actions
+{
+	UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle: title
+		message: message
+		preferredStyle: preferredStyle];
+
+	for (UIAlertAction *action in actions)
+	{
+		[actionSheet addAction: action];
+	}
+	
+	// Present the action sheet.
+    [self presentViewController: actionSheet animated: YES completion: nil];
+}
+
 - (BOOL)canGoBack
 {
 	BOOL canGoBack = NO;
