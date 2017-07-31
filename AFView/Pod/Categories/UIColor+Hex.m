@@ -8,27 +8,41 @@
 
 #pragma mark - Public Methods
 
-+ (UIColor *)colorWithHex: (NSString *)hex
++ (UIColor *)colorWithHexString: (NSString *)hexString
 {
 	UIColor *result = nil;
 
-	if ([hex length] >= 6)
+	if ([hexString length] >= 6)
 	{
-		if ([hex rangeOfString: @"0x"
+		if ([hexString rangeOfString: @"0x"
 			options: NSCaseInsensitiveSearch].location == 0)
 		{
-			hex = [hex substringFromIndex: 2];
+			hexString = [hexString substringFromIndex: 2];
 		}
-		else if ([hex rangeOfString: @"#"].location == 0)
+		else if ([hexString rangeOfString: @"#"].location == 0)
 		{
-			hex = [hex substringFromIndex: 1];
+			hexString = [hexString substringFromIndex: 1];
 		}
 		
 		// Parse the hex color.
-		result = [self _parseHexColor: hex];
+		result = [self _parseHexColor: hexString];
 	}
 	
 	return result;
+}
+
++ (UIColor *)colorWithHexValue: (int)hexValue
+{
+	return [[UIColor alloc]
+		initWithRed: ((float)((hexValue & 0xFF0000) >> 16)) / 255.f 
+		green: ((float)((hexValue & 0xFF00) >> 8)) / 255.f 
+		blue: ((float)(hexValue & 0xFF)) / 255.f 
+		alpha: 1.f];
+}
+
++ (UIColor *)randomColor
+{
+	return [UIColor colorWithHexValue: arc4random() % INT_MAX];
 }
 
 
@@ -54,6 +68,8 @@
 	}
 	else if ([hex length] == 6)
 	{
+		return [self colorWithHexValue: hexInt];
+	
 		result = [[UIColor alloc]
 			initWithRed: ((float)((hexInt & 0xFF0000) >> 16)) / 255.f
 			green: ((float)((hexInt & 0xFF00) >> 8)) / 255.f

@@ -7,7 +7,11 @@
 
 #pragma mark - Instance Methods
 
-+ (UIColor *)colorWithHex: (NSString *)hex;
++ (UIColor *)colorWithHexString: (NSString *)hexString;
+
++ (UIColor *)colorWithHexValue: (int)hexValue;
+
++ (UIColor *)randomColor;
 
 
 @end

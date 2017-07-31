@@ -13,6 +13,7 @@
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
+		81302A2B1F2F8188009400CB /* UIApplication+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 81302A2A1F2F8188009400CB /* UIApplication+Helpers.m */; };
 		C92F20FC196EE5E40027034B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C92F20F8196EE5E40027034B /* InfoPlist.strings */; };
 		C92F20FD196EE5E40027034B /* Tests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92F20F9196EE5E40027034B /* Tests-Info.plist */; };
 		C92F20FE196EE5E40027034B /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C92F20FB196EE5E40027034B /* Tests.m */; };
@@ -66,6 +67,8 @@
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		81302A291F2F8188009400CB /* UIApplication+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Helpers.h"; sourceTree = "<group>"; };
+		81302A2A1F2F8188009400CB /* UIApplication+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Helpers.m"; sourceTree = "<group>"; };
 		92711654763449DF9CC32B2E /* Pods-AFView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFView.xcconfig"; path = "Pods/Pods-AFView.xcconfig"; sourceTree = "<group>"; };
 		C90D25BE19784AF600B9083B /* AFView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AFView.podspec; sourceTree = "<group>"; };
 		C90D25BF19784AF600B9083B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				C9A7C1B7197872CF00C367AC /* UIView+ViewController.m */,
 				C9A7C1B8197872CF00C367AC /* UIViewController+Presentation.h */,
 				C9A7C1B9197872CF00C367AC /* UIViewController+Presentation.m */,
+				81302A291F2F8188009400CB /* UIApplication+Helpers.h */,
+				81302A2A1F2F8188009400CB /* UIApplication+Helpers.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 				C9A7C1ED197872CF00C367AC /* AFActionSheet.m in Sources */,
 				C9A7C1EC197872CF00C367AC /* AFViewController.m in Sources */,
 				C9A7C1E8197872CF00C367AC /* AFKeyboardObserver.m in Sources */,
+				81302A2B1F2F8188009400CB /* UIApplication+Helpers.m in Sources */,
 				C9A7C1D9197872CF00C367AC /* AFAppDelegate.m in Sources */,
 				C9A7C1E1197872CF00C367AC /* UIView+Animation.m in Sources */,
 				C9A7C1E4197872CF00C367AC /* UIView+Universal.m in Sources */,
@@ -642,6 +648,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AFView/Supporting Files/AFView-Prefix.pch";
 				INFOPLIST_FILE = "AFView/Supporting Files/AFView-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = af.AFView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -656,6 +663,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AFView/Supporting Files/AFView-Prefix.pch";
 				INFOPLIST_FILE = "AFView/Supporting Files/AFView-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = af.AFView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

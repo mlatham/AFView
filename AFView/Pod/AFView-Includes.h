@@ -1,7 +1,3 @@
-// Macros
-#import "AFDefines.h"
-#import "AFKeypath.h"
-
 // Categories
 #import "NSBundle+Universal.h"
 #import "UIColor+Hex.h"
@@ -16,6 +12,7 @@
 #import "UIView+ViewController.h"
 #import "UIScrollView+ScrollToView.h"
 #import "UIViewController+Presentation.h"
+#import "UIApplication+Helpers.h"
 
 // Common
 #import "AFKeyboardInfo.h"
