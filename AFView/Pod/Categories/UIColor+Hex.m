@@ -69,12 +69,6 @@
 	else if ([hex length] == 6)
 	{
 		return [self colorWithHexValue: hexInt];
-	
-		result = [[UIColor alloc]
-			initWithRed: ((float)((hexInt & 0xFF0000) >> 16)) / 255.f
-			green: ((float)((hexInt & 0xFF00) >> 8)) / 255.f
-			blue: ((float)(hexInt & 0xFF)) / 255.f
-			alpha: 1.f];
 	}
 	
 	return result;
