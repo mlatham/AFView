@@ -12,6 +12,9 @@
 	willShowSelector: (SEL)willShowSelector
 	willHideSelector: (SEL)willHideSelector;
 
+// Automatically adjusts content insets.
+- (id)initWithScrollView: (UIScrollView *)scrollView;
+
 
 #pragma mark - Properties
 

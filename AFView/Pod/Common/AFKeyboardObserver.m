@@ -9,6 +9,9 @@
 	@private SEL _willShowSelector;
 	@private SEL _willHideSelector;
 	@private __weak id _target;
+	
+	@private CGFloat _originalScrollViewBottomInset;
+	@private __weak UIScrollView *_scrollView;
 }
 
 
@@ -39,6 +42,18 @@
 	_isObservingKeyboardNotifications = NO;
 	
 	// Return initialized instance.
+	return self;
+}
+
+- (id)initWithScrollView: (UIScrollView *)scrollView
+{
+	if ((self = [self initWithTarget: self
+		willShowSelector: @selector(_showScrollViewInsets:)
+		willHideSelector: @selector(_hideScrollViewInsets:)]) == nil)
+	{
+		return nil;
+	}
+	
 	return self;
 }
 
@@ -114,6 +129,25 @@
 
 
 #pragma mark - Private Methods
+
+- (void)_showScrollViewInsets: (AFKeyboardInfo *)keyboardInfo
+{
+	if (_scrollView == nil || _isKeyboardVisible) { return; }
+
+	UIEdgeInsets contentInset = _scrollView.contentInset;
+	_originalScrollViewBottomInset = contentInset.bottom;
+	contentInset.bottom = keyboardInfo.endFrame.size.height;
+	_scrollView.contentInset = contentInset;
+}
+
+- (void)_hideScrollViewInsets: (AFKeyboardInfo *)keyboardInfo
+{
+	if (_scrollView == nil || _isKeyboardVisible == NO) { return; }
+	
+	UIEdgeInsets contentInset = _scrollView.contentInset;
+	contentInset.bottom = _originalScrollViewBottomInset;
+	_scrollView.contentInset = contentInset;
+}
 
 - (void)_keyboardWillShow: (NSNotification *)notification
 {
