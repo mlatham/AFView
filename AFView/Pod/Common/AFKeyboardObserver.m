@@ -54,6 +54,8 @@
 		return nil;
 	}
 	
+	_scrollView = scrollView;
+	
 	return self;
 }
 
