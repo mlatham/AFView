@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   
   s.prefix_header_contents = '#import "AFView-Includes.h"'
 
-  s.platform			= :ios, "10.0"
+  s.platform			= :ios, "8.0"
   s.requires_arc		= true
 
 end
