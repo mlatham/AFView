@@ -89,13 +89,12 @@ static NSString *_OSVersion = nil;
 - (AFDeviceOrientation)AFDeviceOrientation
 {
 	// use interface orientation (if possible)
-    UIWindow *mainWindow = [[UIApplication sharedApplication]
-        keyWindow];
+	UIApplication *application = [UIApplication sharedApplication];
+    UIWindow *mainWindow = [application keyWindow];
     if (mainWindow != nil
-        && mainWindow.rootViewController != nil)
+    	&& mainWindow.rootViewController != nil)
     {
-        UIInterfaceOrientation interfaceOrientation = 
-            [mainWindow rootViewController].interfaceOrientation;
+        UIInterfaceOrientation interfaceOrientation = application.statusBarOrientation;
         return interfaceOrientation == 
             UIInterfaceOrientationIsPortrait(interfaceOrientation)
                 ? AFDeviceOrientationPortrait : AFDeviceOrientationLandscape;

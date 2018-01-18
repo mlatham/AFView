@@ -12,71 +12,56 @@
 }
 
 
-#pragma mark - UIActionSheetDelegate Methods
-
-- (void)actionSheet: (UIActionSheet *)actionSheet
-	clickedButtonAtIndex: (NSInteger)buttonIndex
-{
-	id result = nil;
-	
-	if (buttonIndex == actionSheet.destructiveButtonIndex)
-	{
-		NSAssert(NO, @"Destructive button unsupported");
-	}
-	else if (buttonIndex == actionSheet.cancelButtonIndex)
-	{
-		// Result is nil.
-	}
-	else if (buttonIndex >= actionSheet.firstOtherButtonIndex)
-	{
-		buttonIndex -= actionSheet.firstOtherButtonIndex;
-		result = [_options objectAtIndex: buttonIndex];
-	}
-
-	// Call and clear the completion.
-	if (_completion != nil)
-	{
-		_completion(result);
-		_completion = nil;
-	}
-}
-
-
 #pragma mark - Public Methods
 
-- (void)presentInView: (UIView *)view
++ (void)presentFromViewController: (UIViewController *)viewController
 	title: (NSString *)title
 	otherButtonTitles: (NSArray *)otherButtonTitles
 	completion: (AFActionSheetCompletion)completion
 {
-	// Only allow a single call.
-	if (_completion != nil)
-	{
-		completion(nil);
-		return;
-	}
-	
-	// Track completion.
-	_completion = [completion copy];
+	// Keep around the completion callback.
+	__block AFActionSheetCompletion blockCompletion = [completion copy];
 
-	// Show action sheet.
-	UIActionSheet *actionSheet = [[UIActionSheet alloc]
-		initWithTitle: title
-		delegate: self
-		cancelButtonTitle: @"Cancel" // TODO: LOCALIZE:
-		destructiveButtonTitle: nil
-		otherButtonTitles: nil];
-		
+	UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle: title
+		message: nil
+		preferredStyle: UIAlertControllerStyleActionSheet];
+
+	// TODO: LOCALIZE:
+    [actionSheet addAction: [UIAlertAction actionWithTitle: @"Cancel"
+    	style: UIAlertActionStyleCancel
+		handler: ^(UIAlertAction *action) {
+			
+			// Call back.
+        	[viewController dismissViewControllerAnimated: YES completion: ^{
+        		if (blockCompletion != nil)
+				{
+					blockCompletion(nil);
+				}
+			}];
+    }]];
+
 	// Add each button title.
 	for (NSString *buttonTitle in otherButtonTitles)
 	{
-		[actionSheet addButtonWithTitle: buttonTitle];
+		[actionSheet addAction: [UIAlertAction actionWithTitle: buttonTitle
+			style: UIAlertActionStyleDefault
+			handler: ^(UIAlertAction *action) {
+				
+				// Call back.
+	    		[blockCompletion dismissViewControllerAnimated: YES
+					completion: ^{
+					if (blockCompletion != nil)
+					{
+						blockCompletion(buttonTitle);
+					}
+        		}];
+    	}]];
 	}
-		
-	actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-	
-	// Present the sheet.
-	[actionSheet showInView: view];
+
+    // Present action sheet.
+    [viewController presentViewController: actionSheet
+		animated: YES
+		completion: nil];
 }
 
 
